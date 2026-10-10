@@ -56,12 +56,10 @@ func main( ) {
 	} 
 	close(jobs)
 
-
 	go func ()  {
 		wg.Wait()
 		close(results)
 	}()
-
 
 	for r := range results {
 		if r.Err != nil {
@@ -70,8 +68,6 @@ func main( ) {
 		}
 		fmt.Printf("%-25s %d  %v\n", r.URL, r.Status, r.Duration)
 	}
-
-
 
 	fmt.Println("Full time:", time.Since(start))
 }

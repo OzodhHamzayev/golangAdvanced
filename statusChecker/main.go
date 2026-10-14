@@ -71,6 +71,3 @@ func main( ) {
 
 	fmt.Println("Full time:", time.Since(start))
 }
-
-
-
